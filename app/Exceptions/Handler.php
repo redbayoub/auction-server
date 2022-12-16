@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use App\Http\JsonResponse;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
@@ -56,7 +57,10 @@ class Handler extends ExceptionHandler
         $this->renderable(function (Throwable $e, Request $request) {
             if ($request->wantsJson()) {
                 if ($e instanceof AuthenticationException)
-                    return JsonResponse::fail('Unauthenticated', null, Response::HTTP_UNAUTHORIZED);
+                    return JsonResponse::fail('Unauthenticated', null, Response::HTTP_UNAUTHORIZED); 
+                    
+                if ($e instanceof AuthorizationException)
+                    return JsonResponse::fail('This action is unauthorized.', null, Response::HTTP_UNAUTHORIZED);
 
                 if ($e instanceof ValidationException)
                     return JsonResponse::fail($e->getMessage(), $e->errors(), Response::HTTP_UNPROCESSABLE_ENTITY);
