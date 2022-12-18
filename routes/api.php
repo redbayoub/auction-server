@@ -15,4 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/user', App\Http\Controllers\Api\MeController::class);
+    Route::apiResource('items', App\Http\Controllers\Api\ItemController::class)->only(['index', 'show']);
+
+    Route::middleware('isAdmin')->group(function () {
+        Route::post('/items/{id}',[App\Http\Controllers\Api\ItemController::class,'update'])->name('items.update');
+        Route::apiResource('items', App\Http\Controllers\Api\ItemController::class)->only(['store', 'destroy']);
+    });
 });
