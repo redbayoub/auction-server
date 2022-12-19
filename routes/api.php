@@ -16,15 +16,18 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/user', App\Http\Controllers\Api\MeController::class);
     Route::apiResource('items', App\Http\Controllers\Api\ItemController::class)->only(['index', 'show']);
-    
+
     Route::middleware('isUser')->group(function () {
-        Route::post('/items/{id}/bids',[App\Http\Controllers\Api\BidController::class,'store'])->name('items.bids.store');
+        Route::post('/items/{id}/bids', [App\Http\Controllers\Api\BidController::class, 'store'])->name('items.bids.store');
+
+        Route::get('/user/bot', [App\Http\Controllers\Api\BotController::class, 'show'])->name('user.bot.show');
+        Route::put('/user/bot', [App\Http\Controllers\Api\BotController::class, 'update'])->name('user.bot.update');
     });
     Route::apiResource('items', App\Http\Controllers\Api\ItemController::class)->only(['index', 'show']);
 
     Route::middleware('isAdmin')->group(function () {
-        Route::get('/items/{id}/bids',[App\Http\Controllers\Api\BidController::class,'index'])->name('items.bids.index');
-        Route::post('/items/{id}',[App\Http\Controllers\Api\ItemController::class,'update'])->name('items.update');
+        Route::get('/items/{id}/bids', [App\Http\Controllers\Api\BidController::class, 'index'])->name('items.bids.index');
+        Route::post('/items/{id}', [App\Http\Controllers\Api\ItemController::class, 'update'])->name('items.update');
         Route::apiResource('items', App\Http\Controllers\Api\ItemController::class)->only(['store', 'destroy']);
     });
 });
