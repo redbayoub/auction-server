@@ -19,6 +19,9 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::middleware('isUser')->group(function () {
         Route::post('/items/{id}/bids', [App\Http\Controllers\Api\BidController::class, 'store'])->name('items.bids.store');
+        Route::get('/items/{id}/auto-bid', [App\Http\Controllers\Api\AutoBidItemController::class, 'show'])->name('items.auto-bid.show');
+        Route::post('/items/{id}/auto-bid', [App\Http\Controllers\Api\AutoBidItemController::class, 'store'])->name('items.auto-bid.enable');
+        Route::delete('/items/{id}/auto-bid', [App\Http\Controllers\Api\AutoBidItemController::class, 'destroy'])->name('items.auto-bid.disable');
 
         Route::get('/user/bot', [App\Http\Controllers\Api\BotController::class, 'show'])->name('user.bot.show');
         Route::put('/user/bot', [App\Http\Controllers\Api\BotController::class, 'update'])->name('user.bot.update');
