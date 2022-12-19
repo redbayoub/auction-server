@@ -29,7 +29,7 @@ class Handler extends ExceptionHandler
      * @var array<int, class-string<\Throwable>>
      */
     protected $dontReport = [
-        //
+        BidSubmissionValidationException::class,
     ];
 
     /**
@@ -57,8 +57,8 @@ class Handler extends ExceptionHandler
         $this->renderable(function (Throwable $e, Request $request) {
             if ($request->wantsJson()) {
                 if ($e instanceof AuthenticationException)
-                    return JsonResponse::fail('Unauthenticated', null, Response::HTTP_UNAUTHORIZED); 
-                    
+                    return JsonResponse::fail('Unauthenticated', null, Response::HTTP_UNAUTHORIZED);
+
                 if ($e instanceof AuthorizationException)
                     return JsonResponse::fail('This action is unauthorized.', null, Response::HTTP_UNAUTHORIZED);
 
