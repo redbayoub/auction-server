@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\JsonResponse;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class MeController extends Controller
@@ -16,6 +17,7 @@ class MeController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return JsonResponse::success(null, $request->user());
+        $user = User::with('bot')->findOrFail(auth()->id());
+        return JsonResponse::success(null, $user);
     }
 }

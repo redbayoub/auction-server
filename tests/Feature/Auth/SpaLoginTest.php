@@ -84,7 +84,8 @@ class SpaLoginTest extends TestCase
         $res->assertJson([
             'status' => 'success',
             'data' => [
-                'username' => $user->username
+                'username' => $user->username,
+                'bot' => null,
             ]
         ]);
     }
