@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('maxAmount');
             $table->unsignedTinyInteger('percentageAlert')->default(90);
             $table->boolean('isAlertSent')->default(false);
-            $table->foreignId('user_id')->constrained();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->unique('user_id');
             $table->timestamps();
         });
