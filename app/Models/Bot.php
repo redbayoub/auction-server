@@ -13,7 +13,21 @@ class Bot extends Model
         'maxAmount',
         'percentageAlert',
         'user_id',
+        'isAlertSent',
+        'minAmount',
     ];
-    
-    
+
+    protected $casts = [
+        'isAlertSent' => 'boolean',
+    ];
+
+    protected static function booted()
+    {
+        static::saving(function ($bot) {
+            if (!$bot->exists || $bot->isDirty('percentageAlert'))
+                $bot->minAmount = (int) $bot->maxAmount - ($bot->maxAmount * ($bot->percentageAlert / 100));
+
+            return true;
+        });
+    }
 }

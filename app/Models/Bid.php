@@ -13,6 +13,7 @@ class Bid extends Model
         'amount',
         'user_id',
         'item_id',
+        'isBot',
     ];
 
     protected $casts = [

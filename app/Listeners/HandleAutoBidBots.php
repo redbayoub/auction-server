@@ -43,7 +43,7 @@ class HandleAutoBidBots
 
         $competingBots = Bot::hydrate($queryResults->all());
 
-        if (count($competingBots) == 0) return false;
+        if (count($competingBots) == 0) return true;
 
         $winnerBot = null;
         $nextBidAmount = null;
