@@ -15,7 +15,7 @@ class NotificationsController extends Controller
      */
     public function index()
     {
-        $notifications = auth()->user()->unreadNotifications;
+        $notifications = auth()->user()->notifications;
         return JsonResponse::success(null, $notifications);
     }
 
