@@ -44,7 +44,7 @@ class AutoBidBotUsageAlert extends Notification
     {
         return [
             'title' => 'Auto-Bid Bot Usage Alert',
-            'body' => 'The auto-bid bot has used ' . $this->bot->maxPercentage . '% of the max amount',
+            'body' => 'The auto-bid bot has used ' . $this->bot->percentageAlert . '% of the max amount',
         ];
     }
 }
