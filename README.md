@@ -63,6 +63,18 @@ Admin User Credentials
 -   Username: admin1
 -   Password: admin2
 
+## Database Seeding
+
+To seed auction Items in the database run
+
+    php artisan db:seed --class=ItemSeeder
+
+## Testing
+
+To make sure everything is running as expected run
+
+    php artisan test
+
 ---
 
 ## Laravel Sail Installation method
