@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\JsonResponse;
 use App\Models\Item;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Validation\Rule;
@@ -78,6 +79,9 @@ class ItemController extends Controller
         $item = Item::findOrFail($id);
         if (auth()->user()->isAdmin)
             $item = $item->makeVisible(['startingPrice']);
+        if (Carbon::parse($item->auction_closes_at)->lessThan(now()))
+            $item = $item->append('bid_username')->makeVisible('bid_username');
+
         return JsonResponse::success(null, $item);
     }
 

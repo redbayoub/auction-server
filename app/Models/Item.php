@@ -28,6 +28,7 @@ class Item extends Model
     protected $hidden = [
         'startingPrice',
         'highestBid',
+        'bid_username',
     ];
 
     protected $appends = [
@@ -62,6 +63,19 @@ class Item extends Model
             },
         );
     }
+    protected function bidUsername(): Attribute
+    {
+        return Attribute::make(
+            get: function ($value, $attributes) {
+                if (!array_key_exists('highestBid', $this->relations)) $this->load('highestBid');
+
+                $related = $this->getRelation('highestBid');
+
+                return ($related) ? $related->user->username : null;
+            },
+        );
+    }
+    
 
     protected function image(): Attribute
     {
