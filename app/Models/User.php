@@ -19,6 +19,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'email',
         'username',
         'password',
         'isAdmin',
@@ -46,5 +47,10 @@ class User extends Authenticatable
     public function bot(): HasOne
     {
         return $this->hasOne(Bot::class);
+    }
+    
+    public function routeNotificationForMail($notification)
+    {
+        return [$this->email => $this->username];
     }
 }
