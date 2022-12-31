@@ -19,6 +19,7 @@ class Item extends Model
         'image',
         'startingPrice',
         'auction_closes_at',
+        'auction_closed_job_id',
     ];
 
     protected $casts = [
@@ -75,7 +76,7 @@ class Item extends Model
             },
         );
     }
-    
+
 
     protected function image(): Attribute
     {
@@ -89,6 +90,11 @@ class Item extends Model
     public function bids(): HasMany
     {
         return $this->hasMany(Bid::class);
+    }
+
+    public function auctionClosedJob(): HasOne
+    {
+        return $this->hasOne(DelayedJob::class, 'id', 'auction_closed_job_id');
     }
 
     public function highestBid()

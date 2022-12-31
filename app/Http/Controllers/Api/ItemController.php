@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\JsonResponse;
+use App\Jobs\AuctionClosedEventDispatcher;
+use App\Models\DelayedJob;
 use App\Models\Item;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -57,13 +59,20 @@ class ItemController extends Controller
         ]);
 
         $imagePath = $request->file('image')->storePublicly("/public/images");
+
+        $delayedJob = DelayedJob::create();
+
         $item = Item::create([
             'name' => $request->name,
             'description' => $request->description,
             'startingPrice' => $request->startingPrice,
             'auction_closes_at' => $request->auction_closes_at,
             'image' => $imagePath,
+            'auction_closed_job_id' => $delayedJob->id,
         ]);
+
+        AuctionClosedEventDispatcher::dispatch($delayedJob, $item)
+            ->delay(Carbon::parse($request->auction_closes_at));
 
         return JsonResponse::success('Item created successfully', $item, Response::HTTP_CREATED);
     }
@@ -106,13 +115,21 @@ class ItemController extends Controller
 
         $imagePath = $request->file('image')->storePublicly("/public/images");
 
+        $item->auctionClosedJob()->delete();
+
+        $delayedJob = DelayedJob::create();
+
         $item->update([
             'name' => $request->name,
             'description' => $request->description,
             'startingPrice' => $request->startingPrice,
             'auction_closes_at' => $request->auction_closes_at,
             'image' => $imagePath,
+            'auction_closed_job_id' => $delayedJob->id,
         ]);
+
+        AuctionClosedEventDispatcher::dispatch($delayedJob, $item)
+            ->delay(Carbon::parse($request->auction_closes_at));
 
         return JsonResponse::success('Item updated successfully', $item);
     }
