@@ -30,7 +30,8 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::get('/user/bot', [App\Http\Controllers\Api\BotController::class, 'show'])->name('user.bot.show');
         Route::put('/user/bot', [App\Http\Controllers\Api\BotController::class, 'update'])->name('user.bot.update');
 
-        Route::get('/user/bids', [App\Http\Controllers\Api\UserBidController::class, 'index'])->name('user.bit.index');
+        Route::get('/user/bids', [App\Http\Controllers\Api\UserBidController::class, 'index'])->name('user.bids.index');
+        Route::get('/user/items', [App\Http\Controllers\Api\UserItemController::class, 'index'])->name('user.items.index');
     });
 
     Route::apiResource('items', App\Http\Controllers\Api\ItemController::class)->only(['index', 'show']);
