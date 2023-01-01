@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Events\ItemUpdatedEvent;
 use App\Http\Controllers\Controller;
 use App\Http\JsonResponse;
 use App\Jobs\AuctionClosedEventDispatcher;
@@ -130,6 +131,8 @@ class ItemController extends Controller
 
         AuctionClosedEventDispatcher::dispatch($delayedJob, $item)
             ->delay(Carbon::parse($request->auction_closes_at));
+
+        ItemUpdatedEvent::dispatch($item);
 
         return JsonResponse::success('Item updated successfully', $item);
     }
