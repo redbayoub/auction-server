@@ -61,6 +61,7 @@ class UserItemTest extends TestCase
                     'id',
                     'name',
                     'price',
+                    'bill_url'
                 ],
             ]
         ]);

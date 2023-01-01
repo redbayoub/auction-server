@@ -17,7 +17,11 @@ class UserItemController extends Controller
      */
     public function index(Request $request)
     {
-        $items = Item::where('auction_closes_at', '<', now())->whereHas('highestBid', fn ($q) => $q->where('user_id', auth()->user()->id))->get();
+        $items = Item::where('auction_closes_at', '<', now())
+            ->whereHas('highestBid', fn ($q) => $q->where('user_id', auth()->user()->id))
+            ->get()
+            ->map
+            ->append('bill_url');
 
         return JsonResponse::success(null, $items);
     }

@@ -22,3 +22,7 @@ Route::post('/login', [App\Http\Controllers\AuthController::class, 'login']);
 Route::middleware('auth')->group(function () {
     Route::post('/logout', [App\Http\Controllers\AuthController::class, 'logout']);
 });
+
+Route::get('/items/{id}/bill', [App\Http\Controllers\ItemBillController::class, 'show'])
+    ->name('items.bill.show')
+    ->middleware('signed');
