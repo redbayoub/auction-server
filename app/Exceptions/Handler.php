@@ -77,7 +77,7 @@ class Handler extends ExceptionHandler
 
     private function renderUnhandledException(Throwable $e, Request $request)
     {
-        $status = 400;
+        $status = 500;
         if ($this->isHttpException($e)) {
             $status = $e->getStatusCode();
         }
