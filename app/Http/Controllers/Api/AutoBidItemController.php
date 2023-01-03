@@ -40,7 +40,7 @@ class AutoBidItemController extends Controller
     {
         $autoBidItem = AutoBidItem::where('user_id', auth()->user()->id)
             ->where('item_id', $id)
-            ->first();
+            ->firstOrFail();
 
         return JsonResponse::success(null, $autoBidItem);
     }
