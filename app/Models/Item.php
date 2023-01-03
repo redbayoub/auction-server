@@ -31,6 +31,7 @@ class Item extends Model
     protected $hidden = [
         'startingPrice',
         'highestBid',
+        'auctionClosedJob',
         'bid_username',
     ];
 

@@ -21,6 +21,12 @@ class Bot extends Model
         'isAlertSent' => 'boolean',
     ];
 
+    protected $hidden = [
+        'isAlertSent',
+        'minAmount',
+    ];
+
+
     protected static function booted()
     {
         static::saving(function ($bot) {
