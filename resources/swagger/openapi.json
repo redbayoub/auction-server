@@ -1919,6 +1919,229 @@
                     }
                 ]
             }
+        },
+        "/auth/register": {
+            "post": {
+                "summary": "Register a new User or Admin",
+                "operationId": "post-auth-register",
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/User"
+                                        }
+                                    }
+                                },
+                                "examples": {
+                                    "Example 1": {
+                                        "value": {
+                                            "status": "success",
+                                            "message": "Registered successfully",
+                                            "data": {
+                                                "id": 1,
+                                                "username": "user1",
+                                                "isAdmin": false,
+                                                "created_at": "2022-12-31T09:00:42.000000Z",
+                                                "updated_at": "2022-12-31T09:00:42.000000Z",
+                                                "email": "user@example.com",
+                                                "bot": {}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/unautorized-403"
+                    },
+                    "422": {
+                        "$ref": "#/components/responses/validation-error"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/server-error"
+                    }
+                },
+                "description": "this endpoint allows the user to register and allows the admin to add other admins by passing isAdmin in the body\n\nNote: the admin should be authenticated",
+                "security": [
+                    {
+                        "admin-token": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "username": {
+                                        "type": "string",
+                                        "minLength": 4
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "minLength": 4
+                                    },
+                                    "isAdmin": {
+                                        "type": "boolean",
+                                        "description": "this is used to other admins",
+                                        "default": false
+                                    }
+                                },
+                                "required": ["username", "email", "password"]
+                            }
+                        }
+                    },
+                    "description": ""
+                },
+                "tags": ["auth", "users"]
+            }
+        },
+        "/auth/login": {
+            "post": {
+                "summary": "Login to API",
+                "operationId": "post-auth-login",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "properties": {
+                                                "token": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "examples": {
+                                    "Example 1": {
+                                        "value": {
+                                            "status": "string",
+                                            "message": "string",
+                                            "data": {
+                                                "toekn": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/unauthenticated-401"
+                    },
+                    "422": {
+                        "$ref": "#/components/responses/validation-error"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/server-error"
+                    }
+                },
+                "description": "this endpoint return a authorization bearer token which allows the user to use protected routes\n\nthe user should pass username and password\n\nNote: First Party Front-end web applications users should login using a post request to SERVER_HOST/login because it uses sessions instead of authorization bearer token",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "username": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": ["username", "password"]
+                            },
+                            "examples": {
+                                "Example 1": {
+                                    "value": {
+                                        "username": "user1",
+                                        "password": "user2"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": ["auth", "users"],
+                "security": []
+            }
+        },
+        "/auth/logout": {
+            "delete": {
+                "summary": "Logout the current User",
+                "operationId": "delete-auth-logout",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "headers": {},
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "nullable": true
+                                        }
+                                    }
+                                },
+                                "examples": {
+                                    "Example 1": {
+                                        "value": {
+                                            "status": "success",
+                                            "message": "logged out successfully",
+                                            "data": null
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/unauthenticated-401"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/server-error"
+                    }
+                },
+                "description": "this endpoint allows the user to logout revoke his token\n\nNote: First Party Front-end web applications users should logout using a post request to SERVER_HOST/logout to invalidate their session",
+                "tags": ["auth", "users"]
+            }
         }
     },
     "components": {
@@ -1973,8 +2196,7 @@
                         "format": "email"
                     },
                     "bot": {
-                        "$ref": "#/components/schemas/Bot",
-                        "nullable": true
+                        "$ref": "#/components/schemas/Bot"
                     }
                 }
             },
