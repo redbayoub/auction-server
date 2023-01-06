@@ -47,6 +47,14 @@ Start the local development server
 
 You can now access the server at http://localhost:8000
 
+In a new terminal start the database queue worker to get email notifications working
+
+    php artisan queue:work
+    
+In a new terminal start the websocket server to get real time events working
+
+    php artisan websockets:serve 
+
 ## Authentication
 
 Generate a regular user and admin user, run the database seeder
@@ -116,10 +124,40 @@ Environment variables can be set in `.env` file
     SANCTUM_STATEFUL_DOMAINS=localhost:3000
     SESSION_DOMAIN=localhost
 
+    QUEUE_CONNECTION=database
+
+    MAIL_MAILER=smtp
+    MAIL_HOST=mailhog
+    MAIL_PORT=1025
+    MAIL_USERNAME=null
+    MAIL_PASSWORD=null
+    MAIL_ENCRYPTION=null
+    MAIL_FROM_ADDRESS="hello@example.com"
+    MAIL_FROM_NAME="${APP_NAME}"
+
+    BROADCAST_DRIVER=pusher
+
+    PUSHER_APP_ID=auctionid
+    PUSHER_APP_KEY=auctionkey
+    PUSHER_APP_SECRET=auctionsecret
+    PUSHER_HOST=
+    PUSHER_PORT=443
+    PUSHER_SCHEME=https
+    PUSHER_APP_CLUSTER=mt1
+
+
 -   APP_URL variable refers to the url of the server application
 
 -   DB_CONNECTION, DB_HOST, DB_HOST, DB_DATABASE, DB_USERNAME, DB_PASSWORD variables refers to your database configurations
 
--   SESSION_DRIVER this variable sholuld be set to `cookie` to make sure that the front end application are authenticated
+-   SESSION_DRIVER this variable should be set to `cookie` to make sure that the front end application are authenticated
 
 -   SANCTUM_STATEFUL_DOMAINS variable refers to the SPA front end application
+
+-   QUEUE_CONNECTION variable refers the driver that Laravel should use for queue worker and I recommend using `database` in production
+
+-   MAIL_* variables are email configuration to be able to send email notifications
+
+-   BROADCAST_DRIVER  this variable should be set to `pusher` to make sure that you can get websockets running
+
+-   PUSHER_* variables are related to websockets server and make sure they match on the front-end
