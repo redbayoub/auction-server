@@ -1,0 +1,3198 @@
+{
+    "openapi": "3.0.0",
+    "x-stoplight": {
+        "id": "oj1jebzz4q2ot"
+    },
+    "info": {
+        "title": "AuctionAPI",
+        "version": "1.0",
+        "description": "This is auction api that allows users to submit bids on the auctioned item and also it allows admins to view and manage items in the auction",
+        "contact": {
+            "name": "Redbayoub",
+            "url": "https://www.redbayoub.com",
+            "email": "contact@redbayoub.com"
+        },
+        "termsOfService": "https://www.redbayoub.com",
+        "license": {
+            "url": "https://spdx.org/licenses/MIT.html",
+            "name": "MIT"
+        }
+    },
+    "servers": [
+        {
+            "url": "http://localhost/api"
+        }
+    ],
+    "paths": {
+        "/items": {
+            "get": {
+                "summary": "get all items",
+                "tags": ["items"],
+                "responses": {
+                    "200": {
+                        "description": "The list of all items paginated",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": "success",
+                                            "message": null,
+                                            "data": {
+                                                "data": [
+                                                    {
+                                                        "id": 1,
+                                                        "name": "Commodi et aut fuga.",
+                                                        "description": "Lizard in head downwards, and the moment she appeared; but she could not join the dance? \"You can really have no idea what a wonderful dream it had made. 'He took me for asking! No, it'll never do to ask: perhaps I shall only look up in a confused way, 'Prizes! Prizes!' Alice had learnt several.",
+                                                        "image": "https://via.placeholder.com/640x480.png/001177?text=iusto",
+                                                        "auction_closes_at": "2022-12-31T14:07:41.000000Z",
+                                                        "created_at": "2022-12-31T09:02:41.000000Z",
+                                                        "updated_at": "2022-12-31T09:02:41.000000Z",
+                                                        "price": 760,
+                                                        "bid_user_id": 1
+                                                    },
+                                                    {
+                                                        "id": 2,
+                                                        "name": "At qui sed vel.",
+                                                        "description": "Queen was in the same as they lay sprawling about, reminding her very earnestly, 'Now, Dinah, tell me your history, you know,' said Alice, very loudly and decidedly, and there stood the Queen in front of the house, quite forgetting that she had hurt the poor animal's feelings. 'I quite forgot you.",
+                                                        "image": "https://via.placeholder.com/640x480.png/000088?text=dolorum",
+                                                        "auction_closes_at": "2023-01-01T09:11:49.000000Z",
+                                                        "created_at": "2022-12-31T21:07:50.000000Z",
+                                                        "updated_at": "2022-12-31T21:07:50.000000Z",
+                                                        "price": 790,
+                                                        "bid_user_id": 1
+                                                    },
+                                                    {
+                                                        "id": 3,
+                                                        "name": "Omnis est non quo aperiam.",
+                                                        "description": "Shall I try the whole court was a different person then.' 'Explain all that,' said the Gryphon, before Alice could only hear whispers now and then quietly marched off after the birds! Why, she'll eat a bat?' when suddenly, thump! thump! down she came upon a little hot tea upon its forehead (the.",
+                                                        "image": "https://via.placeholder.com/640x480.png/008888?text=quod",
+                                                        "auction_closes_at": "2023-01-01T02:20:49.000000Z",
+                                                        "created_at": "2022-12-31T21:07:50.000000Z",
+                                                        "updated_at": "2022-12-31T21:07:50.000000Z",
+                                                        "price": 279,
+                                                        "bid_user_id": null
+                                                    },
+                                                    {
+                                                        "id": 4,
+                                                        "name": "Sit enim et perspiciatis sed.",
+                                                        "description": "Rabbit's voice; and Alice joined the procession, wondering very much of a procession,' thought she, 'if people had all to lie down on their slates, and then treading on her hand, watching the setting sun, and thinking of little birds and animals that had fallen into the Dormouse's place, and Alice.",
+                                                        "image": "https://via.placeholder.com/640x480.png/00ccff?text=eum",
+                                                        "auction_closes_at": "2023-01-01T08:47:49.000000Z",
+                                                        "created_at": "2022-12-31T21:07:50.000000Z",
+                                                        "updated_at": "2022-12-31T21:07:50.000000Z",
+                                                        "price": 604,
+                                                        "bid_user_id": null
+                                                    },
+                                                    {
+                                                        "id": 5,
+                                                        "name": "Quae ut non quia dolor.",
+                                                        "description": "Father William,' the young man said, 'And your hair has become very white; And yet you incessantly stand on their hands and feet at the flowers and those cool fountains, but she ran across the garden, and I had our Dinah here, I know I have done that, you know,' Alice gently remarked; 'they'd have.",
+                                                        "image": "https://via.placeholder.com/640x480.png/007733?text=ea",
+                                                        "auction_closes_at": "2023-01-01T04:41:49.000000Z",
+                                                        "created_at": "2022-12-31T21:07:50.000000Z",
+                                                        "updated_at": "2022-12-31T21:07:50.000000Z",
+                                                        "price": 521,
+                                                        "bid_user_id": null
+                                                    },
+                                                    {
+                                                        "id": 6,
+                                                        "name": "Totam aut esse et.",
+                                                        "description": "So you see, Alice had not got into the book her sister on the second time round, she came upon a little different. But if I'm not particular as to go from here?' 'That depends a good deal on where you want to see how the game began. Alice gave a little queer, won't you?' 'Not a bit,' she thought.",
+                                                        "image": "https://via.placeholder.com/640x480.png/00ee11?text=a",
+                                                        "auction_closes_at": "2023-01-01T05:26:49.000000Z",
+                                                        "created_at": "2022-12-31T21:07:50.000000Z",
+                                                        "updated_at": "2022-12-31T21:07:50.000000Z",
+                                                        "price": 528,
+                                                        "bid_user_id": null
+                                                    },
+                                                    {
+                                                        "id": 7,
+                                                        "name": "Quasi porro asperiores in.",
+                                                        "description": "I to do?' said Alice. 'Then you may stand down,' continued the Hatter, and, just as she could, and soon found herself falling down a jar from one minute to another! However, I've got to do,' said Alice indignantly. 'Ah! then yours wasn't a bit hurt, and she very soon came to the other, and making.",
+                                                        "image": "https://via.placeholder.com/640x480.png/00ddaa?text=saepe",
+                                                        "auction_closes_at": "2023-01-01T10:41:11.000000Z",
+                                                        "created_at": "2023-01-01T09:21:11.000000Z",
+                                                        "updated_at": "2023-01-01T09:21:11.000000Z",
+                                                        "price": 760,
+                                                        "bid_user_id": 1
+                                                    },
+                                                    {
+                                                        "id": 8,
+                                                        "name": "Testin4545gOmnis pr3541351aesentium qui maxime.",
+                                                        "description": "Owl, as a cushion, resting their elbows on it, and behind it when she was beginning to grow here,' said the Duchess, it had grown so large in the direction it pointed to, without trying to fix on one, the cook and the poor animal's feelings. 'I quite agree with you,' said the March Hare. Visit.",
+                                                        "image": "http://localhost/storage/images/IP0kzD8EPofMNYmXyehq4k9EiUuW6JcopbI12Ob1.jpg",
+                                                        "auction_closes_at": "2023-01-01T20:30:00.000000Z",
+                                                        "created_at": "2023-01-01T11:18:13.000000Z",
+                                                        "updated_at": "2023-01-01T16:06:21.000000Z",
+                                                        "price": 630,
+                                                        "bid_user_id": 1
+                                                    }
+                                                ],
+                                                "pagination": {
+                                                    "total": 8,
+                                                    "lastPage": 1,
+                                                    "perPage": 10,
+                                                    "currentPage": 1,
+                                                    "nextPageUrl": null,
+                                                    "previousPageUrl": null
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "nullable": true
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "properties": {
+                                                "data": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "$ref": "#/components/schemas/Item"
+                                                    }
+                                                },
+                                                "pagination": {
+                                                    "$ref": "#/components/schemas/Pagination"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "examples": {
+                                    "Example 1": {
+                                        "value": {
+                                            "status": "success",
+                                            "message": null,
+                                            "data": {
+                                                "data": [
+                                                    {
+                                                        "id": 1,
+                                                        "name": "Commodi et aut fuga.",
+                                                        "description": "Lizard in head downwards, and the moment she appeared; but she could not join the dance? \"You can really have no idea what a wonderful dream it had made. 'He took me for asking! No, it'll never do to ask: perhaps I shall only look up in a confused way, 'Prizes! Prizes!' Alice had learnt several.",
+                                                        "image": "https://via.placeholder.com/640x480.png/001177?text=iusto",
+                                                        "auction_closes_at": "2022-12-31T14:07:41.000000Z",
+                                                        "created_at": "2022-12-31T09:02:41.000000Z",
+                                                        "updated_at": "2022-12-31T09:02:41.000000Z",
+                                                        "price": 760,
+                                                        "bid_user_id": 1
+                                                    },
+                                                    {
+                                                        "id": 2,
+                                                        "name": "At qui sed vel.",
+                                                        "description": "Queen was in the same as they lay sprawling about, reminding her very earnestly, 'Now, Dinah, tell me your history, you know,' said Alice, very loudly and decidedly, and there stood the Queen in front of the house, quite forgetting that she had hurt the poor animal's feelings. 'I quite forgot you.",
+                                                        "image": "https://via.placeholder.com/640x480.png/000088?text=dolorum",
+                                                        "auction_closes_at": "2023-01-01T09:11:49.000000Z",
+                                                        "created_at": "2022-12-31T21:07:50.000000Z",
+                                                        "updated_at": "2022-12-31T21:07:50.000000Z",
+                                                        "price": 790,
+                                                        "bid_user_id": 1
+                                                    },
+                                                    {
+                                                        "id": 3,
+                                                        "name": "Omnis est non quo aperiam.",
+                                                        "description": "Shall I try the whole court was a different person then.' 'Explain all that,' said the Gryphon, before Alice could only hear whispers now and then quietly marched off after the birds! Why, she'll eat a bat?' when suddenly, thump! thump! down she came upon a little hot tea upon its forehead (the.",
+                                                        "image": "https://via.placeholder.com/640x480.png/008888?text=quod",
+                                                        "auction_closes_at": "2023-01-01T02:20:49.000000Z",
+                                                        "created_at": "2022-12-31T21:07:50.000000Z",
+                                                        "updated_at": "2022-12-31T21:07:50.000000Z",
+                                                        "price": 279,
+                                                        "bid_user_id": null
+                                                    },
+                                                    {
+                                                        "id": 4,
+                                                        "name": "Sit enim et perspiciatis sed.",
+                                                        "description": "Rabbit's voice; and Alice joined the procession, wondering very much of a procession,' thought she, 'if people had all to lie down on their slates, and then treading on her hand, watching the setting sun, and thinking of little birds and animals that had fallen into the Dormouse's place, and Alice.",
+                                                        "image": "https://via.placeholder.com/640x480.png/00ccff?text=eum",
+                                                        "auction_closes_at": "2023-01-01T08:47:49.000000Z",
+                                                        "created_at": "2022-12-31T21:07:50.000000Z",
+                                                        "updated_at": "2022-12-31T21:07:50.000000Z",
+                                                        "price": 604,
+                                                        "bid_user_id": null
+                                                    },
+                                                    {
+                                                        "id": 5,
+                                                        "name": "Quae ut non quia dolor.",
+                                                        "description": "Father William,' the young man said, 'And your hair has become very white; And yet you incessantly stand on their hands and feet at the flowers and those cool fountains, but she ran across the garden, and I had our Dinah here, I know I have done that, you know,' Alice gently remarked; 'they'd have.",
+                                                        "image": "https://via.placeholder.com/640x480.png/007733?text=ea",
+                                                        "auction_closes_at": "2023-01-01T04:41:49.000000Z",
+                                                        "created_at": "2022-12-31T21:07:50.000000Z",
+                                                        "updated_at": "2022-12-31T21:07:50.000000Z",
+                                                        "price": 521,
+                                                        "bid_user_id": null
+                                                    },
+                                                    {
+                                                        "id": 6,
+                                                        "name": "Totam aut esse et.",
+                                                        "description": "So you see, Alice had not got into the book her sister on the second time round, she came upon a little different. But if I'm not particular as to go from here?' 'That depends a good deal on where you want to see how the game began. Alice gave a little queer, won't you?' 'Not a bit,' she thought.",
+                                                        "image": "https://via.placeholder.com/640x480.png/00ee11?text=a",
+                                                        "auction_closes_at": "2023-01-01T05:26:49.000000Z",
+                                                        "created_at": "2022-12-31T21:07:50.000000Z",
+                                                        "updated_at": "2022-12-31T21:07:50.000000Z",
+                                                        "price": 528,
+                                                        "bid_user_id": null
+                                                    },
+                                                    {
+                                                        "id": 7,
+                                                        "name": "Quasi porro asperiores in.",
+                                                        "description": "I to do?' said Alice. 'Then you may stand down,' continued the Hatter, and, just as she could, and soon found herself falling down a jar from one minute to another! However, I've got to do,' said Alice indignantly. 'Ah! then yours wasn't a bit hurt, and she very soon came to the other, and making.",
+                                                        "image": "https://via.placeholder.com/640x480.png/00ddaa?text=saepe",
+                                                        "auction_closes_at": "2023-01-01T10:41:11.000000Z",
+                                                        "created_at": "2023-01-01T09:21:11.000000Z",
+                                                        "updated_at": "2023-01-01T09:21:11.000000Z",
+                                                        "price": 760,
+                                                        "bid_user_id": 1
+                                                    },
+                                                    {
+                                                        "id": 8,
+                                                        "name": "Testin4545gOmnis pr3541351aesentium qui maxime.",
+                                                        "description": "Owl, as a cushion, resting their elbows on it, and behind it when she was beginning to grow here,' said the Duchess, it had grown so large in the direction it pointed to, without trying to fix on one, the cook and the poor animal's feelings. 'I quite agree with you,' said the March Hare. Visit.",
+                                                        "image": "http://localhost/storage/images/IP0kzD8EPofMNYmXyehq4k9EiUuW6JcopbI12Ob1.jpg",
+                                                        "auction_closes_at": "2023-01-01T20:30:00.000000Z",
+                                                        "created_at": "2023-01-01T11:18:13.000000Z",
+                                                        "updated_at": "2023-01-01T16:06:21.000000Z",
+                                                        "price": 630,
+                                                        "bid_user_id": 1
+                                                    }
+                                                ],
+                                                "pagination": {
+                                                    "total": 8,
+                                                    "lastPage": 1,
+                                                    "perPage": 10,
+                                                    "currentPage": 1,
+                                                    "nextPageUrl": null,
+                                                    "previousPageUrl": null
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/unauthenticated-401"
+                    }
+                },
+                "operationId": "get-items",
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string",
+                            "minLength": 3
+                        },
+                        "in": "query",
+                        "name": "searchTerm",
+                        "description": "serach by name or description"
+                    },
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": ["price:asc", "price:desc"]
+                        },
+                        "in": "query",
+                        "name": "sort",
+                        "description": "sort by price"
+                    },
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "page",
+                        "description": "select a page"
+                    }
+                ],
+                "description": "Get all items"
+            },
+            "post": {
+                "summary": "add item",
+                "tags": ["items"],
+                "responses": {
+                    "200": {
+                        "description": "Item Created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": "success",
+                                            "message": "Item created successfully",
+                                            "data": {
+                                                "name": "dqzdqz",
+                                                "description": "dfg seff s fse",
+                                                "auction_closes_at": "2023-01-25T11:12:00.000000Z",
+                                                "image": "http://localhost/storage/images/Feye7N5NaJjmUK0U1yvc8cNU0UwAaON1cMujOEIJ.jpg",
+                                                "updated_at": "2023-01-02T07:53:44.000000Z",
+                                                "created_at": "2023-01-02T07:53:44.000000Z",
+                                                "id": 10,
+                                                "price": 3213,
+                                                "bid_user_id": null
+                                            }
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Item"
+                                        }
+                                    }
+                                },
+                                "examples": {
+                                    "Example 1": {
+                                        "value": {
+                                            "status": "success",
+                                            "message": "Item created successfully",
+                                            "data": {
+                                                "name": "dqzdqz",
+                                                "description": "dfg seff s fse",
+                                                "auction_closes_at": "2023-01-25T11:12:00.000000Z",
+                                                "image": "http://localhost/storage/images/Feye7N5NaJjmUK0U1yvc8cNU0UwAaON1cMujOEIJ.jpg",
+                                                "updated_at": "2023-01-02T07:53:44.000000Z",
+                                                "created_at": "2023-01-02T07:53:44.000000Z",
+                                                "id": 10,
+                                                "price": 3213,
+                                                "bid_user_id": null
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/unauthenticated-401"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/unautorized-403"
+                    },
+                    "422": {
+                        "$ref": "#/components/responses/validation-error"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/server-error"
+                    }
+                },
+                "operationId": "post-items",
+                "description": "add an item",
+                "security": [
+                    {
+                        "admin-token": []
+                    }
+                ],
+                "requestBody": {
+                    "$ref": "#/components/requestBodies/create-or-update-item"
+                }
+            }
+        },
+        "/items/{itemID}": {
+            "parameters": [
+                {
+                    "$ref": "#/components/parameters/itemID"
+                }
+            ],
+            "get": {
+                "summary": "Get the selected item details",
+                "tags": ["items"],
+                "responses": {
+                    "200": {
+                        "description": "the selected item details",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": "success",
+                                            "message": null,
+                                            "data": {
+                                                "id": 1,
+                                                "name": "Commodi et aut fuga.",
+                                                "description": "Lizard in head downwards, and the moment she appeared; but she could not join the dance? \"You can really have no idea what a wonderful dream it had made. 'He took me for asking! No, it'll never do to ask: perhaps I shall only look up in a confused way, 'Prizes! Prizes!' Alice had learnt several.",
+                                                "image": "https://via.placeholder.com/640x480.png/001177?text=iusto",
+                                                "auction_closes_at": "2022-12-31T14:07:41.000000Z",
+                                                "created_at": "2022-12-31T09:02:41.000000Z",
+                                                "updated_at": "2022-12-31T09:02:41.000000Z",
+                                                "price": 760,
+                                                "bid_user_id": 1
+                                            }
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "nullable": true
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Item"
+                                        }
+                                    }
+                                },
+                                "examples": {
+                                    "Example 1": {
+                                        "value": {
+                                            "status": "success",
+                                            "message": null,
+                                            "data": {
+                                                "id": 1,
+                                                "name": "Commodi et aut fuga.",
+                                                "description": "Lizard in head downwards, and the moment she appeared; but she could not join the dance? \"You can really have no idea what a wonderful dream it had made. 'He took me for asking! No, it'll never do to ask: perhaps I shall only look up in a confused way, 'Prizes! Prizes!' Alice had learnt several.",
+                                                "image": "https://via.placeholder.com/640x480.png/001177?text=iusto",
+                                                "auction_closes_at": "2022-12-31T14:07:41.000000Z",
+                                                "created_at": "2022-12-31T09:02:41.000000Z",
+                                                "updated_at": "2022-12-31T09:02:41.000000Z",
+                                                "price": 760,
+                                                "bid_user_id": 1
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/unauthenticated-401"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/not-found"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/server-error"
+                    }
+                },
+                "operationId": "get-items-id",
+                "description": "Get slected item details"
+            },
+            "post": {
+                "summary": "Update the selected item",
+                "tags": ["items"],
+                "responses": {
+                    "200": {
+                        "description": "Updated Item",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": "success",
+                                            "message": "Item updated successfully",
+                                            "data": {
+                                                "name": "dqzdqz",
+                                                "description": "dfg seff s fse",
+                                                "auction_closes_at": "2023-01-25T11:12:00.000000Z",
+                                                "image": "http://localhost/storage/images/Feye7N5NaJjmUK0U1yvc8cNU0UwAaON1cMujOEIJ.jpg",
+                                                "updated_at": "2023-01-02T07:53:44.000000Z",
+                                                "created_at": "2023-01-02T07:53:44.000000Z",
+                                                "id": 10,
+                                                "price": 3213,
+                                                "bid_user_id": null
+                                            }
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Item"
+                                        }
+                                    }
+                                },
+                                "examples": {
+                                    "Example 1": {
+                                        "value": {
+                                            "status": "success",
+                                            "message": "Item updated successfully",
+                                            "data": {
+                                                "name": "dqzdqz",
+                                                "description": "dfg seff s fse",
+                                                "auction_closes_at": "2023-01-25T11:12:00.000000Z",
+                                                "image": "http://localhost/storage/images/Feye7N5NaJjmUK0U1yvc8cNU0UwAaON1cMujOEIJ.jpg",
+                                                "updated_at": "2023-01-02T07:53:44.000000Z",
+                                                "created_at": "2023-01-02T07:53:44.000000Z",
+                                                "id": 10,
+                                                "price": 3213,
+                                                "bid_user_id": null
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/unauthenticated-401"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/unautorized-403"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/not-found"
+                    },
+                    "422": {
+                        "$ref": "#/components/responses/validation-error"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/server-error"
+                    }
+                },
+                "operationId": "post-items-id",
+                "description": "Update item\n\nNote: Post Method used because PHP dosn't support file upload on other methods",
+                "security": [
+                    {
+                        "admin-token": []
+                    }
+                ],
+                "requestBody": {
+                    "$ref": "#/components/requestBodies/create-or-update-item"
+                }
+            },
+            "delete": {
+                "summary": "delete the selectd item",
+                "tags": ["items"],
+                "responses": {
+                    "200": {
+                        "description": "Item deleted",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "nullable": true
+                                        }
+                                    },
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": "success",
+                                            "message": "Item deleted successfully",
+                                            "data": null
+                                        }
+                                    }
+                                },
+                                "examples": {
+                                    "Example 1": {
+                                        "value": {
+                                            "status": "success",
+                                            "message": "Item deleted successfully",
+                                            "data": null
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/unauthenticated-401"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/unautorized-403"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/not-found"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/server-error"
+                    }
+                },
+                "operationId": "delete-items-id",
+                "description": "delete the selectd item and all related bids",
+                "security": [
+                    {
+                        "admin-token": []
+                    }
+                ]
+            }
+        },
+        "/items/{itemID}/auto-bid": {
+            "parameters": [
+                {
+                    "$ref": "#/components/parameters/itemID"
+                }
+            ],
+            "get": {
+                "summary": "get auto bid status",
+                "tags": ["items", "bids"],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": "success",
+                                            "message": null,
+                                            "data": {
+                                                "id": 1,
+                                                "item_id": 10,
+                                                "user_id": 1,
+                                                "created_at": "2023-01-03T07:57:52.000000Z",
+                                                "updated_at": "2023-01-03T07:57:52.000000Z"
+                                            }
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "nullable": true
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/AutoBidItem"
+                                        }
+                                    }
+                                },
+                                "examples": {
+                                    "Example 1": {
+                                        "value": {
+                                            "status": "success",
+                                            "message": null,
+                                            "data": {
+                                                "id": 1,
+                                                "item_id": 10,
+                                                "user_id": 1,
+                                                "created_at": "2023-01-03T07:57:52.000000Z",
+                                                "updated_at": "2023-01-03T07:57:52.000000Z"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/unauthenticated-401"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/unautorized-403"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/not-found"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/server-error"
+                    }
+                },
+                "operationId": "get-items-id-auto-bid",
+                "description": "get auto bid status",
+                "security": [
+                    {
+                        "user-token": []
+                    }
+                ]
+            },
+            "post": {
+                "summary": "enable auto bid",
+                "tags": ["items", "bids"],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "nullable": true
+                                        }
+                                    },
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": "success",
+                                            "message": "Auto-Bid enabled successfully on the selected item",
+                                            "data": null
+                                        }
+                                    }
+                                },
+                                "examples": {
+                                    "Example 1": {
+                                        "value": {
+                                            "status": "success",
+                                            "message": "Auto-Bid enabled successfully on the selected item",
+                                            "data": null
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/unauthenticated-401"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/unautorized-403"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/not-found"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/server-error"
+                    }
+                },
+                "operationId": "post-items-id-auto-bid",
+                "description": "Enable auto bid on the selected item",
+                "security": [
+                    {
+                        "user-token": []
+                    }
+                ]
+            },
+            "delete": {
+                "summary": "disable auto bid",
+                "tags": ["items", "bids"],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "nullable": true
+                                        }
+                                    },
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": "success",
+                                            "message": "Auto-Bid disabled successfully on the selected item",
+                                            "data": null
+                                        }
+                                    }
+                                },
+                                "examples": {
+                                    "Example 1": {
+                                        "value": {
+                                            "status": "success",
+                                            "message": "Auto-Bid disabled successfully on the selected item",
+                                            "data": null
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/unauthenticated-401"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/unautorized-403"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/not-found"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/server-error"
+                    }
+                },
+                "operationId": "delete-items-id-auto-bid",
+                "description": "Disable auto bid on the selected item",
+                "security": [
+                    {
+                        "user-token": []
+                    }
+                ]
+            }
+        },
+        "/items/{itemID}/bids": {
+            "parameters": [
+                {
+                    "$ref": "#/components/parameters/itemID"
+                }
+            ],
+            "get": {
+                "summary": "get all bids on the selected item",
+                "tags": ["items", "bids"],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": "string",
+                                            "message": null,
+                                            "data": {
+                                                "data": [
+                                                    {
+                                                        "id": 5,
+                                                        "user_id": 1,
+                                                        "item_id": 1,
+                                                        "amount": 760,
+                                                        "created_at": "2023-01-01T08:46:25.000000Z",
+                                                        "updated_at": "2023-01-01T08:46:25.000000Z",
+                                                        "user": {
+                                                            "id": 1,
+                                                            "username": "user1",
+                                                            "isAdmin": false,
+                                                            "created_at": "2022-12-31T09:00:42.000000Z",
+                                                            "updated_at": "2022-12-31T09:00:42.000000Z",
+                                                            "email": "elody26@rippin.com"
+                                                        }
+                                                    }
+                                                ],
+                                                "pagination": {
+                                                    "total": 0,
+                                                    "lastPage": 0,
+                                                    "perPage": 0,
+                                                    "currentPage": 0,
+                                                    "nextPageUrl": "string",
+                                                    "previousPageUrl": "string"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "nullable": true
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "properties": {
+                                                "data": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "$ref": "#/components/schemas/Bid"
+                                                    }
+                                                },
+                                                "pagination": {
+                                                    "$ref": "#/components/schemas/Pagination"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "examples": {
+                                    "Example 1": {
+                                        "value": {
+                                            "status": "success",
+                                            "message": null,
+                                            "data": {
+                                                "data": [
+                                                    {
+                                                        "id": 10,
+                                                        "user_id": 1,
+                                                        "item_id": 8,
+                                                        "amount": 630,
+                                                        "created_at": "2023-01-01T11:46:36.000000Z",
+                                                        "updated_at": "2023-01-01T11:46:36.000000Z",
+                                                        "user": {
+                                                            "id": 1,
+                                                            "username": "user1",
+                                                            "isAdmin": false,
+                                                            "created_at": "2022-12-31T09:00:42.000000Z",
+                                                            "updated_at": "2022-12-31T09:00:42.000000Z",
+                                                            "email": "elody26@rippin.com"
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": 9,
+                                                        "user_id": 5,
+                                                        "item_id": 8,
+                                                        "amount": 629,
+                                                        "created_at": "2023-01-01T11:27:03.000000Z",
+                                                        "updated_at": "2023-01-01T11:27:03.000000Z",
+                                                        "user": {
+                                                            "id": 5,
+                                                            "username": "user2",
+                                                            "isAdmin": false,
+                                                            "created_at": "2023-01-01T11:08:08.000000Z",
+                                                            "updated_at": "2023-01-01T11:08:08.000000Z",
+                                                            "email": "murray.patsy@hotmail.com"
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": 8,
+                                                        "user_id": 1,
+                                                        "item_id": 8,
+                                                        "amount": 628,
+                                                        "created_at": "2023-01-01T11:23:55.000000Z",
+                                                        "updated_at": "2023-01-01T11:23:55.000000Z",
+                                                        "user": {
+                                                            "id": 1,
+                                                            "username": "user1",
+                                                            "isAdmin": false,
+                                                            "created_at": "2022-12-31T09:00:42.000000Z",
+                                                            "updated_at": "2022-12-31T09:00:42.000000Z",
+                                                            "email": "elody26@rippin.com"
+                                                        }
+                                                    }
+                                                ],
+                                                "pagination": {
+                                                    "total": 3,
+                                                    "lastPage": 1,
+                                                    "perPage": 10,
+                                                    "currentPage": 1,
+                                                    "nextPageUrl": null,
+                                                    "previousPageUrl": null
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/unauthenticated-401"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/unautorized-403"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/not-found"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/server-error"
+                    }
+                },
+                "operationId": "get-items-id-bids",
+                "description": "get all bids on the selected item",
+                "security": [
+                    {
+                        "admin-token": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/page"
+                    }
+                ]
+            },
+            "post": {
+                "summary": "submit a bid on an item",
+                "tags": ["items", "bids"],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": "success",
+                                            "message": "Bid added successfully",
+                                            "data": {
+                                                "user_id": 1,
+                                                "item_id": 11,
+                                                "amount": 562,
+                                                "updated_at": "2023-01-03T08:09:20.000000Z",
+                                                "created_at": "2023-01-03T08:09:20.000000Z",
+                                                "id": 14,
+                                                "user": {
+                                                    "id": 1,
+                                                    "username": "user1",
+                                                    "isAdmin": false,
+                                                    "created_at": "2022-12-31T09:00:42.000000Z",
+                                                    "updated_at": "2022-12-31T09:00:42.000000Z",
+                                                    "email": "elody26@rippin.com"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Bid"
+                                        }
+                                    }
+                                },
+                                "examples": {
+                                    "Example 1": {
+                                        "value": {
+                                            "status": "success",
+                                            "message": "Bid added successfully",
+                                            "data": {
+                                                "user_id": 1,
+                                                "item_id": 11,
+                                                "amount": 562,
+                                                "updated_at": "2023-01-03T08:09:20.000000Z",
+                                                "created_at": "2023-01-03T08:09:20.000000Z",
+                                                "id": 14
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/unauthenticated-401"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/unautorized-403"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/not-found"
+                    },
+                    "422": {
+                        "$ref": "#/components/responses/validation-error"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/server-error"
+                    }
+                },
+                "operationId": "post-items-id-bids",
+                "description": "submit a bid on the selected item",
+                "security": [
+                    {
+                        "user-token": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "amount": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "x-examples": {
+                                    "Example 1": {
+                                        "amount": 0
+                                    }
+                                }
+                            },
+                            "examples": {
+                                "Example 1": {
+                                    "value": {
+                                        "amount": 1000
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "description": ""
+                }
+            }
+        },
+        "/user": {
+            "get": {
+                "summary": "Get current user",
+                "tags": ["users"],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": "success",
+                                            "message": null,
+                                            "data": {
+                                                "id": 1,
+                                                "username": "user1",
+                                                "isAdmin": false,
+                                                "created_at": "2022-12-31T09:00:42.000000Z",
+                                                "updated_at": "2022-12-31T09:00:42.000000Z",
+                                                "email": "elody26@rippin.com",
+                                                "bot": {
+                                                    "id": 1,
+                                                    "maxAmount": 1000,
+                                                    "percentageAlert": 10,
+                                                    "isAlertSent": false,
+                                                    "user_id": 1,
+                                                    "created_at": "2023-01-01T21:38:18.000000Z",
+                                                    "updated_at": "2023-01-01T21:38:18.000000Z"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "nullable": true
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/User"
+                                        }
+                                    }
+                                },
+                                "examples": {
+                                    "Example 1": {
+                                        "value": {
+                                            "status": "success",
+                                            "message": null,
+                                            "data": {
+                                                "id": 1,
+                                                "username": "user1",
+                                                "isAdmin": false,
+                                                "created_at": "2022-12-31T09:00:42.000000Z",
+                                                "updated_at": "2022-12-31T09:00:42.000000Z",
+                                                "email": "elody26@rippin.com",
+                                                "bot": {
+                                                    "id": 1,
+                                                    "maxAmount": 1000,
+                                                    "percentageAlert": 10,
+                                                    "isAlertSent": false,
+                                                    "user_id": 1,
+                                                    "created_at": "2023-01-01T21:38:18.000000Z",
+                                                    "updated_at": "2023-01-01T21:38:18.000000Z"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/unauthenticated-401"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/server-error"
+                    }
+                },
+                "operationId": "get-user",
+                "description": "get the current user details"
+            }
+        },
+        "/user/notifications": {
+            "get": {
+                "summary": "get all notficaions",
+                "tags": ["users"],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": "success",
+                                            "message": null,
+                                            "data": [
+                                                {
+                                                    "id": "91165ed8-23c8-4800-ac47-eef14018691c",
+                                                    "type": "App\\Notifications\\AutoBidBotUsageAlert",
+                                                    "notifiable_type": "App\\Models\\User",
+                                                    "notifiable_id": 1,
+                                                    "data": {
+                                                        "title": "Auto-Bid Bot Usage Alert",
+                                                        "body": "The auto-bid bot has used 10% of the max amount"
+                                                    },
+                                                    "read_at": null,
+                                                    "created_at": "2023-01-03T08:24:00.000000Z",
+                                                    "updated_at": "2023-01-03T08:24:00.000000Z"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "nullable": true
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Notification"
+                                            }
+                                        }
+                                    }
+                                },
+                                "examples": {
+                                    "Example 1": {
+                                        "value": {
+                                            "status": "success",
+                                            "message": null,
+                                            "data": [
+                                                {
+                                                    "id": "91165ed8-23c8-4800-ac47-eef14018691c",
+                                                    "type": "App\\Notifications\\AutoBidBotUsageAlert",
+                                                    "notifiable_type": "App\\Models\\User",
+                                                    "notifiable_id": 1,
+                                                    "data": {
+                                                        "title": "Auto-Bid Bot Usage Alert",
+                                                        "body": "The auto-bid bot has used 10% of the max amount"
+                                                    },
+                                                    "read_at": null,
+                                                    "created_at": "2023-01-03T08:24:00.000000Z",
+                                                    "updated_at": "2023-01-03T08:24:00.000000Z"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/unauthenticated-401"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/server-error"
+                    }
+                },
+                "operationId": "get-user-notifications",
+                "description": "returns all user notfications"
+            },
+            "put": {
+                "summary": "mark all unread notfication as read",
+                "tags": ["users"],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "nullable": true
+                                        }
+                                    },
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": "success",
+                                            "message": "All unread notifications has been marked as read",
+                                            "data": null
+                                        }
+                                    }
+                                },
+                                "examples": {
+                                    "Example 1": {
+                                        "value": {
+                                            "status": "success",
+                                            "message": "All unread notifications has been marked as read",
+                                            "data": null
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/unauthenticated-401"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/server-error"
+                    }
+                },
+                "operationId": "put-user-notifications",
+                "description": "set all notfications as read"
+            },
+            "delete": {
+                "summary": "delete all notfications",
+                "tags": ["users"],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "nullable": true
+                                        }
+                                    },
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": "success",
+                                            "message": "All notifications has been deleted",
+                                            "data": null
+                                        }
+                                    }
+                                },
+                                "examples": {
+                                    "Example 1": {
+                                        "value": {
+                                            "status": "success",
+                                            "message": "All notifications has been deleted",
+                                            "data": null
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/unauthenticated-401"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/server-error"
+                    }
+                },
+                "operationId": "delete-user-notifications",
+                "description": "delete all user notfications"
+            }
+        },
+        "/user/bot": {
+            "get": {
+                "summary": "get user bot configs",
+                "tags": ["users"],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": "success",
+                                            "message": null,
+                                            "data": {
+                                                "id": 1,
+                                                "maxAmount": 1000,
+                                                "percentageAlert": 10,
+                                                "user_id": 1,
+                                                "created_at": "2023-01-01T21:38:18.000000Z",
+                                                "updated_at": "2023-01-03T08:23:59.000000Z"
+                                            }
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "nullable": true
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Bot"
+                                        }
+                                    }
+                                },
+                                "examples": {
+                                    "Example 1": {
+                                        "value": {
+                                            "status": "success",
+                                            "message": null,
+                                            "data": {
+                                                "id": 1,
+                                                "maxAmount": 1000,
+                                                "percentageAlert": 10,
+                                                "user_id": 1,
+                                                "created_at": "2023-01-01T21:38:18.000000Z",
+                                                "updated_at": "2023-01-03T08:23:59.000000Z"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/unauthenticated-401"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/unautorized-403"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/not-found"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/server-error"
+                    }
+                },
+                "operationId": "get-user-bot",
+                "description": "get the current user bot configs",
+                "security": [
+                    {
+                        "user-token": []
+                    }
+                ]
+            },
+            "put": {
+                "summary": "update user bot configs",
+                "tags": ["users"],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": "success",
+                                            "message": "Bot configs updated successfully",
+                                            "data": {
+                                                "id": 1,
+                                                "maxAmount": 994,
+                                                "percentageAlert": 8,
+                                                "user_id": 1,
+                                                "created_at": "2023-01-01T21:38:18.000000Z",
+                                                "updated_at": "2023-01-03T08:47:39.000000Z"
+                                            }
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Bot"
+                                        }
+                                    }
+                                },
+                                "examples": {
+                                    "Example 1": {
+                                        "value": {
+                                            "status": "success",
+                                            "message": "Bot configs updated successfully",
+                                            "data": {
+                                                "id": 1,
+                                                "maxAmount": 994,
+                                                "percentageAlert": 8,
+                                                "user_id": 1,
+                                                "created_at": "2023-01-01T21:38:18.000000Z",
+                                                "updated_at": "2023-01-03T08:47:39.000000Z"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/unauthenticated-401"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/unautorized-403"
+                    },
+                    "422": {
+                        "$ref": "#/components/responses/validation-error"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/server-error"
+                    }
+                },
+                "operationId": "put-user-bot",
+                "description": "update or set the current user bot confgis",
+                "security": [
+                    {
+                        "user-token": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "x-examples": {
+                                    "Example 1": {
+                                        "maxAmount": 994,
+                                        "percentageAlert": 8
+                                    }
+                                },
+                                "properties": {
+                                    "maxAmount": {
+                                        "type": "integer",
+                                        "minimum": 1
+                                    },
+                                    "percentageAlert": {
+                                        "type": "integer",
+                                        "minimum": 1,
+                                        "maximum": 100
+                                    }
+                                }
+                            },
+                            "examples": {
+                                "Example 1": {
+                                    "value": {
+                                        "maxAmount": 994,
+                                        "percentageAlert": 8
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/user/bids": {
+            "get": {
+                "summary": "get all user bids",
+                "tags": ["bids", "users"],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": "success",
+                                            "message": null,
+                                            "data": [
+                                                {
+                                                    "id": 3,
+                                                    "user_id": 1,
+                                                    "item_id": 2,
+                                                    "amount": 790,
+                                                    "created_at": "2023-01-01T07:39:23.000000Z",
+                                                    "updated_at": "2023-01-01T07:39:23.000000Z",
+                                                    "status": "won",
+                                                    "item": {
+                                                        "id": 2,
+                                                        "name": "At qui sed vel.",
+                                                        "description": "Queen was in the same as they lay sprawling about, reminding her very earnestly, 'Now, Dinah, tell me your history, you know,' said Alice, very loudly and decidedly, and there stood the Queen in front of the house, quite forgetting that she had hurt the poor animal's feelings. 'I quite forgot you.",
+                                                        "image": "https://via.placeholder.com/640x480.png/000088?text=dolorum",
+                                                        "auction_closes_at": "2023-01-01T09:11:49.000000Z",
+                                                        "created_at": "2022-12-31T21:07:50.000000Z",
+                                                        "updated_at": "2022-12-31T21:07:50.000000Z",
+                                                        "auction_closed_job_id": null,
+                                                        "price": 790,
+                                                        "bid_user_id": 1
+                                                    }
+                                                },
+                                                {
+                                                    "id": 5,
+                                                    "user_id": 1,
+                                                    "item_id": 1,
+                                                    "amount": 760,
+                                                    "created_at": "2023-01-01T08:46:25.000000Z",
+                                                    "updated_at": "2023-01-01T08:46:25.000000Z",
+                                                    "status": "won",
+                                                    "item": {
+                                                        "id": 1,
+                                                        "name": "Commodi et aut fuga.",
+                                                        "description": "Lizard in head downwards, and the moment she appeared; but she could not join the dance? \"You can really have no idea what a wonderful dream it had made. 'He took me for asking! No, it'll never do to ask: perhaps I shall only look up in a confused way, 'Prizes! Prizes!' Alice had learnt several.",
+                                                        "image": "https://via.placeholder.com/640x480.png/001177?text=iusto",
+                                                        "auction_closes_at": "2022-12-31T14:07:41.000000Z",
+                                                        "created_at": "2022-12-31T09:02:41.000000Z",
+                                                        "updated_at": "2022-12-31T09:02:41.000000Z",
+                                                        "auction_closed_job_id": null,
+                                                        "price": 760,
+                                                        "bid_user_id": 1
+                                                    }
+                                                },
+                                                {
+                                                    "id": 6,
+                                                    "user_id": 1,
+                                                    "item_id": 7,
+                                                    "amount": 760,
+                                                    "created_at": "2023-01-01T09:21:27.000000Z",
+                                                    "updated_at": "2023-01-01T09:21:27.000000Z",
+                                                    "status": "won",
+                                                    "item": {
+                                                        "id": 7,
+                                                        "name": "Quasi porro asperiores in.",
+                                                        "description": "I to do?' said Alice. 'Then you may stand down,' continued the Hatter, and, just as she could, and soon found herself falling down a jar from one minute to another! However, I've got to do,' said Alice indignantly. 'Ah! then yours wasn't a bit hurt, and she very soon came to the other, and making.",
+                                                        "image": "https://via.placeholder.com/640x480.png/00ddaa?text=saepe",
+                                                        "auction_closes_at": "2023-01-01T10:41:11.000000Z",
+                                                        "created_at": "2023-01-01T09:21:11.000000Z",
+                                                        "updated_at": "2023-01-01T09:21:11.000000Z",
+                                                        "auction_closed_job_id": null,
+                                                        "price": 760,
+                                                        "bid_user_id": 1
+                                                    }
+                                                },
+                                                {
+                                                    "id": 10,
+                                                    "user_id": 1,
+                                                    "item_id": 8,
+                                                    "amount": 630,
+                                                    "created_at": "2023-01-01T11:46:36.000000Z",
+                                                    "updated_at": "2023-01-01T11:46:36.000000Z",
+                                                    "status": "won",
+                                                    "item": {
+                                                        "id": 8,
+                                                        "name": "Testin4545gOmnis pr3541351aesentium qui maxime.",
+                                                        "description": "Owl, as a cushion, resting their elbows on it, and behind it when she was beginning to grow here,' said the Duchess, it had grown so large in the direction it pointed to, without trying to fix on one, the cook and the poor animal's feelings. 'I quite agree with you,' said the March Hare. Visit.",
+                                                        "image": "http://localhost/storage/images/IP0kzD8EPofMNYmXyehq4k9EiUuW6JcopbI12Ob1.jpg",
+                                                        "auction_closes_at": "2023-01-01T20:30:00.000000Z",
+                                                        "created_at": "2023-01-01T11:18:13.000000Z",
+                                                        "updated_at": "2023-01-01T16:06:21.000000Z",
+                                                        "auction_closed_job_id": null,
+                                                        "price": 630,
+                                                        "bid_user_id": 1
+                                                    }
+                                                },
+                                                {
+                                                    "id": 14,
+                                                    "user_id": 1,
+                                                    "item_id": 11,
+                                                    "amount": 562,
+                                                    "created_at": "2023-01-03T08:09:20.000000Z",
+                                                    "updated_at": "2023-01-03T08:09:20.000000Z",
+                                                    "status": "in progress",
+                                                    "item": {
+                                                        "id": 11,
+                                                        "name": "Repellendus a sit ea.",
+                                                        "description": "I shan't! YOU do it!--That I won't, then!--Bill's to go on. 'And so these three little sisters--they were learning to draw, you know--' (pointing with his nose, and broke off a bit afraid of interrupting him,) 'I'll give him sixpence. _I_ don't believe you do lessons?' said Alice, in a more.",
+                                                        "image": "https://via.placeholder.com/640x480.png/00ee77?text=cumque",
+                                                        "auction_closes_at": "2023-01-03T13:02:53.000000Z",
+                                                        "created_at": "2023-01-03T07:52:54.000000Z",
+                                                        "updated_at": "2023-01-03T07:52:54.000000Z",
+                                                        "auction_closed_job_id": null,
+                                                        "price": 562,
+                                                        "bid_user_id": 1
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "nullable": true
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Bid"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/unauthenticated-401"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/unautorized-403"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/server-error"
+                    }
+                },
+                "operationId": "get-user-bids",
+                "description": "get the current user bids with the status of each bid",
+                "security": [
+                    {
+                        "user-token": []
+                    }
+                ]
+            }
+        },
+        "/user/items": {
+            "get": {
+                "summary": "get all item awarded to the user",
+                "tags": ["items", "users"],
+                "responses": {
+                    "200": {
+                        "description": "The list of awarded items",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": "success",
+                                            "message": null,
+                                            "data": [
+                                                {
+                                                    "id": 1,
+                                                    "name": "Commodi et aut fuga.",
+                                                    "description": "Lizard in head downwards, and the moment she appeared; but she could not join the dance? \"You can really have no idea what a wonderful dream it had made. 'He took me for asking! No, it'll never do to ask: perhaps I shall only look up in a confused way, 'Prizes! Prizes!' Alice had learnt several.",
+                                                    "image": "https://via.placeholder.com/640x480.png/001177?text=iusto",
+                                                    "auction_closes_at": "2022-12-31T14:07:41.000000Z",
+                                                    "created_at": "2022-12-31T09:02:41.000000Z",
+                                                    "updated_at": "2022-12-31T09:02:41.000000Z",
+                                                    "auction_closed_job_id": null,
+                                                    "price": 760,
+                                                    "bid_user_id": 1,
+                                                    "bill_url": "http://localhost/items/1/bill?expires=1672737864&signature=9ea79464ea8b23482b930e5b6c852c052cda0a513b8c4871fcc9f520e7a4dc60"
+                                                },
+                                                {
+                                                    "id": 2,
+                                                    "name": "At qui sed vel.",
+                                                    "description": "Queen was in the same as they lay sprawling about, reminding her very earnestly, 'Now, Dinah, tell me your history, you know,' said Alice, very loudly and decidedly, and there stood the Queen in front of the house, quite forgetting that she had hurt the poor animal's feelings. 'I quite forgot you.",
+                                                    "image": "https://via.placeholder.com/640x480.png/000088?text=dolorum",
+                                                    "auction_closes_at": "2023-01-01T09:11:49.000000Z",
+                                                    "created_at": "2022-12-31T21:07:50.000000Z",
+                                                    "updated_at": "2022-12-31T21:07:50.000000Z",
+                                                    "auction_closed_job_id": null,
+                                                    "price": 790,
+                                                    "bid_user_id": 1,
+                                                    "bill_url": "http://localhost/items/2/bill?expires=1672737864&signature=2c4ea094eddd78973e5d25a8795e59d72f446b52326f594ab55fe8da3deb95b1"
+                                                },
+                                                {
+                                                    "id": 7,
+                                                    "name": "Quasi porro asperiores in.",
+                                                    "description": "I to do?' said Alice. 'Then you may stand down,' continued the Hatter, and, just as she could, and soon found herself falling down a jar from one minute to another! However, I've got to do,' said Alice indignantly. 'Ah! then yours wasn't a bit hurt, and she very soon came to the other, and making.",
+                                                    "image": "https://via.placeholder.com/640x480.png/00ddaa?text=saepe",
+                                                    "auction_closes_at": "2023-01-01T10:41:11.000000Z",
+                                                    "created_at": "2023-01-01T09:21:11.000000Z",
+                                                    "updated_at": "2023-01-01T09:21:11.000000Z",
+                                                    "auction_closed_job_id": null,
+                                                    "price": 760,
+                                                    "bid_user_id": 1,
+                                                    "bill_url": "http://localhost/items/7/bill?expires=1672737864&signature=006c79fb143f6046727ce5713d3cb4da1ffe9d1fc3f8b39052ffbb51cf182211"
+                                                },
+                                                {
+                                                    "id": 8,
+                                                    "name": "Testin4545gOmnis pr3541351aesentium qui maxime.",
+                                                    "description": "Owl, as a cushion, resting their elbows on it, and behind it when she was beginning to grow here,' said the Duchess, it had grown so large in the direction it pointed to, without trying to fix on one, the cook and the poor animal's feelings. 'I quite agree with you,' said the March Hare. Visit.",
+                                                    "image": "http://localhost/storage/images/IP0kzD8EPofMNYmXyehq4k9EiUuW6JcopbI12Ob1.jpg",
+                                                    "auction_closes_at": "2023-01-01T20:30:00.000000Z",
+                                                    "created_at": "2023-01-01T11:18:13.000000Z",
+                                                    "updated_at": "2023-01-01T16:06:21.000000Z",
+                                                    "auction_closed_job_id": null,
+                                                    "price": 630,
+                                                    "bid_user_id": 1,
+                                                    "bill_url": "http://localhost/items/8/bill?expires=1672737865&signature=0f64b2235fc43f97b09f0fdf53b1ebc69ed64e7ed965d512d070e628daf73f5e"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "nullable": true
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Item"
+                                            }
+                                        }
+                                    }
+                                },
+                                "examples": {
+                                    "Example 1": {
+                                        "value": {
+                                            "status": "success",
+                                            "message": null,
+                                            "data": [
+                                                {
+                                                    "id": 1,
+                                                    "name": "Commodi et aut fuga.",
+                                                    "description": "Lizard in head downwards, and the moment she appeared; but she could not join the dance? \"You can really have no idea what a wonderful dream it had made. 'He took me for asking! No, it'll never do to ask: perhaps I shall only look up in a confused way, 'Prizes! Prizes!' Alice had learnt several.",
+                                                    "image": "https://via.placeholder.com/640x480.png/001177?text=iusto",
+                                                    "auction_closes_at": "2022-12-31T14:07:41.000000Z",
+                                                    "created_at": "2022-12-31T09:02:41.000000Z",
+                                                    "updated_at": "2022-12-31T09:02:41.000000Z",
+                                                    "auction_closed_job_id": null,
+                                                    "price": 760,
+                                                    "bid_user_id": 1,
+                                                    "bill_url": "http://localhost/items/1/bill?expires=1672737864&signature=9ea79464ea8b23482b930e5b6c852c052cda0a513b8c4871fcc9f520e7a4dc60"
+                                                },
+                                                {
+                                                    "id": 2,
+                                                    "name": "At qui sed vel.",
+                                                    "description": "Queen was in the same as they lay sprawling about, reminding her very earnestly, 'Now, Dinah, tell me your history, you know,' said Alice, very loudly and decidedly, and there stood the Queen in front of the house, quite forgetting that she had hurt the poor animal's feelings. 'I quite forgot you.",
+                                                    "image": "https://via.placeholder.com/640x480.png/000088?text=dolorum",
+                                                    "auction_closes_at": "2023-01-01T09:11:49.000000Z",
+                                                    "created_at": "2022-12-31T21:07:50.000000Z",
+                                                    "updated_at": "2022-12-31T21:07:50.000000Z",
+                                                    "auction_closed_job_id": null,
+                                                    "price": 790,
+                                                    "bid_user_id": 1,
+                                                    "bill_url": "http://localhost/items/2/bill?expires=1672737864&signature=2c4ea094eddd78973e5d25a8795e59d72f446b52326f594ab55fe8da3deb95b1"
+                                                },
+                                                {
+                                                    "id": 7,
+                                                    "name": "Quasi porro asperiores in.",
+                                                    "description": "I to do?' said Alice. 'Then you may stand down,' continued the Hatter, and, just as she could, and soon found herself falling down a jar from one minute to another! However, I've got to do,' said Alice indignantly. 'Ah! then yours wasn't a bit hurt, and she very soon came to the other, and making.",
+                                                    "image": "https://via.placeholder.com/640x480.png/00ddaa?text=saepe",
+                                                    "auction_closes_at": "2023-01-01T10:41:11.000000Z",
+                                                    "created_at": "2023-01-01T09:21:11.000000Z",
+                                                    "updated_at": "2023-01-01T09:21:11.000000Z",
+                                                    "auction_closed_job_id": null,
+                                                    "price": 760,
+                                                    "bid_user_id": 1,
+                                                    "bill_url": "http://localhost/items/7/bill?expires=1672737864&signature=006c79fb143f6046727ce5713d3cb4da1ffe9d1fc3f8b39052ffbb51cf182211"
+                                                },
+                                                {
+                                                    "id": 8,
+                                                    "name": "Testin4545gOmnis pr3541351aesentium qui maxime.",
+                                                    "description": "Owl, as a cushion, resting their elbows on it, and behind it when she was beginning to grow here,' said the Duchess, it had grown so large in the direction it pointed to, without trying to fix on one, the cook and the poor animal's feelings. 'I quite agree with you,' said the March Hare. Visit.",
+                                                    "image": "http://localhost/storage/images/IP0kzD8EPofMNYmXyehq4k9EiUuW6JcopbI12Ob1.jpg",
+                                                    "auction_closes_at": "2023-01-01T20:30:00.000000Z",
+                                                    "created_at": "2023-01-01T11:18:13.000000Z",
+                                                    "updated_at": "2023-01-01T16:06:21.000000Z",
+                                                    "auction_closed_job_id": null,
+                                                    "price": 630,
+                                                    "bid_user_id": 1,
+                                                    "bill_url": "http://localhost/items/8/bill?expires=1672737865&signature=0f64b2235fc43f97b09f0fdf53b1ebc69ed64e7ed965d512d070e628daf73f5e"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/unauthenticated-401"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/unautorized-403"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/server-error"
+                    }
+                },
+                "operationId": "get-user-items",
+                "description": "get all the items that are awarded to the current user",
+                "security": [
+                    {
+                        "user-token": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "User": {
+                "type": "object",
+                "x-examples": {
+                    "Example 1": {
+                        "id": 1,
+                        "username": "user1",
+                        "isAdmin": false,
+                        "created_at": "2022-12-31T09:00:42.000000Z",
+                        "updated_at": "2022-12-31T09:00:42.000000Z",
+                        "email": "elody26@rippin.com",
+                        "bot": null
+                    },
+                    "Example 2": {
+                        "id": 1,
+                        "username": "user1",
+                        "isAdmin": false,
+                        "created_at": "2022-12-31T09:00:42.000000Z",
+                        "updated_at": "2022-12-31T09:00:42.000000Z",
+                        "email": "elody26@rippin.com",
+                        "bot": {
+                            "id": 1,
+                            "maxAmount": 1000,
+                            "percentageAlert": 10,
+                            "user_id": 1,
+                            "created_at": "2023-01-01T21:38:18.000000Z",
+                            "updated_at": "2023-01-01T21:38:18.000000Z"
+                        }
+                    }
+                },
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "username": {
+                        "type": "string"
+                    },
+                    "isAdmin": {
+                        "type": "boolean"
+                    },
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string",
+                        "format": "email"
+                    },
+                    "bot": {
+                        "$ref": "#/components/schemas/Bot",
+                        "nullable": true
+                    }
+                }
+            },
+            "Item": {
+                "type": "object",
+                "x-examples": {
+                    "Example 1": {
+                        "id": 1,
+                        "name": "Commodi et aut fuga.",
+                        "description": "Lizard in head downwards, and the moment she appeared; but she could not join the dance? \"You can really have no idea what a wonderful dream it had made. 'He took me for asking! No, it'll never do to ask: perhaps I shall only look up in a confused way, 'Prizes! Prizes!' Alice had learnt several.",
+                        "image": "https://via.placeholder.com/640x480.png/001177?text=iusto",
+                        "auction_closes_at": "2022-12-31T14:07:41.000000Z",
+                        "created_at": "2022-12-31T09:02:41.000000Z",
+                        "updated_at": "2022-12-31T09:02:41.000000Z",
+                        "price": 760,
+                        "bid_user_id": 1
+                    }
+                },
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "image": {
+                        "type": "string"
+                    },
+                    "auction_closes_at": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "type": "string"
+                    },
+                    "price": {
+                        "type": "integer"
+                    },
+                    "bid_user_id": {
+                        "type": "integer",
+                        "nullable": true
+                    },
+                    "bid_username": {
+                        "type": "string",
+                        "description": "this field is returned only when the aution is closed and awarded to someo",
+                        "nullable": true
+                    },
+                    "bill_url": {
+                        "type": "string",
+                        "description": "this field is returned only when the aution is closed and awarded to someone and the current user is awarded or the user is an",
+                        "nullable": true
+                    },
+                    "startingPrice": {
+                        "type": "integer",
+                        "description": "this field is available only for admin user",
+                        "nullable": true
+                    }
+                }
+            },
+            "Pagination": {
+                "type": "object",
+                "x-examples": {
+                    "Example 1": {
+                        "total": 8,
+                        "lastPage": 1,
+                        "perPage": 10,
+                        "currentPage": 1,
+                        "nextPageUrl": null,
+                        "previousPageUrl": null
+                    }
+                },
+                "properties": {
+                    "total": {
+                        "type": "integer"
+                    },
+                    "lastPage": {
+                        "type": "integer"
+                    },
+                    "perPage": {
+                        "type": "integer"
+                    },
+                    "currentPage": {
+                        "type": "integer"
+                    },
+                    "nextPageUrl": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "previousPageUrl": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                }
+            },
+            "Bot": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "maxAmount": {
+                        "type": "integer"
+                    },
+                    "percentageAlert": {
+                        "type": "integer"
+                    },
+                    "user_id": {
+                        "type": "integer"
+                    },
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "type": "string"
+                    }
+                },
+                "x-examples": {
+                    "Example 1": {
+                        "id": 1,
+                        "maxAmount": 1000,
+                        "percentageAlert": 10,
+                        "user_id": 1,
+                        "created_at": "2023-01-01T21:38:18.000000Z",
+                        "updated_at": "2023-01-01T21:38:18.000000Z"
+                    }
+                }
+            },
+            "AutoBidItem": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "item_id": {
+                        "type": "integer"
+                    },
+                    "user_id": {
+                        "type": "integer"
+                    },
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "type": "string"
+                    }
+                },
+                "x-examples": {
+                    "Example 1": {
+                        "id": 1,
+                        "item_id": 10,
+                        "user_id": 1,
+                        "created_at": "2023-01-03T07:57:52.000000Z",
+                        "updated_at": "2023-01-03T07:57:52.000000Z"
+                    }
+                }
+            },
+            "Bid": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "user_id": {
+                        "type": "integer"
+                    },
+                    "item_id": {
+                        "type": "integer"
+                    },
+                    "amount": {
+                        "type": "integer"
+                    },
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "type": "string"
+                    },
+                    "user": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer"
+                            },
+                            "username": {
+                                "type": "string"
+                            },
+                            "isAdmin": {
+                                "type": "boolean"
+                            },
+                            "created_at": {
+                                "type": "string"
+                            },
+                            "updated_at": {
+                                "type": "string"
+                            },
+                            "email": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "x-examples": {
+                    "Example 1": {
+                        "id": 5,
+                        "user_id": 1,
+                        "item_id": 1,
+                        "amount": 760,
+                        "created_at": "2023-01-01T08:46:25.000000Z",
+                        "updated_at": "2023-01-01T08:46:25.000000Z",
+                        "user": {
+                            "id": 1,
+                            "username": "user1",
+                            "isAdmin": false,
+                            "created_at": "2022-12-31T09:00:42.000000Z",
+                            "updated_at": "2022-12-31T09:00:42.000000Z",
+                            "email": "elody26@rippin.com"
+                        }
+                    }
+                }
+            },
+            "Notification": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "notifiable_type": {
+                        "type": "string"
+                    },
+                    "notifiable_id": {
+                        "type": "integer"
+                    },
+                    "data": {
+                        "type": "object",
+                        "properties": {
+                            "title": {
+                                "type": "string"
+                            },
+                            "body": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "read_at": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "type": "string"
+                    }
+                },
+                "x-examples": {
+                    "Example 1": {
+                        "id": "91165ed8-23c8-4800-ac47-eef14018691c",
+                        "type": "App\\Notifications\\AutoBidBotUsageAlert",
+                        "notifiable_type": "App\\Models\\User",
+                        "notifiable_id": 1,
+                        "data": {
+                            "title": "Auto-Bid Bot Usage Alert",
+                            "body": "The auto-bid bot has used 10% of the max amount"
+                        },
+                        "read_at": null,
+                        "created_at": "2023-01-03T08:24:00.000000Z",
+                        "updated_at": "2023-01-03T08:24:00.000000Z"
+                    }
+                }
+            }
+        },
+        "securitySchemes": {
+            "token": {
+                "type": "http",
+                "scheme": "bearer",
+                "description": "this is the token genrated to any user of the api"
+            },
+            "admin-token": {
+                "type": "http",
+                "scheme": "bearer",
+                "description": "this is token with admin privileges"
+            },
+            "user-token": {
+                "type": "http",
+                "scheme": "bearer",
+                "description": "this a token with user only privileges"
+            }
+        },
+        "requestBodies": {
+            "create-or-update-item": {
+                "content": {
+                    "multipart/form-data": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "description": {
+                                    "type": "string"
+                                },
+                                "startingPrice": {
+                                    "type": "integer",
+                                    "minimum": 1
+                                },
+                                "auction_closes_at": {
+                                    "type": "string",
+                                    "format": "date-time"
+                                },
+                                "image": {
+                                    "type": "object",
+                                    "description": "image file"
+                                }
+                            },
+                            "required": [
+                                "name",
+                                "description",
+                                "startingPrice",
+                                "auction_closes_at",
+                                "image"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "responses": {
+            "not-found": {
+                "description": "Example response",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "type": "object",
+                                    "nullable": true
+                                }
+                            },
+                            "x-examples": {
+                                "Example 1": {
+                                    "status": "fail",
+                                    "message": "Resource Not found",
+                                    "data": null
+                                }
+                            }
+                        },
+                        "examples": {
+                            "Example 1": {
+                                "value": {
+                                    "status": "fail",
+                                    "message": "Resource Not found",
+                                    "data": null
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "server-error": {
+                "description": "Example response",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "x-examples": {
+                                "Example 1": {
+                                    "status": "fail",
+                                    "message": "Sorry, something went wrong.",
+                                    "data": {
+                                        "exception": "ArgumentCountError",
+                                        "trace": [
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/CallableDispatcher.php",
+                                                "line": 40,
+                                                "function": "{closure}",
+                                                "class": "Illuminate\\Routing\\RouteFileRegistrar",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Route.php",
+                                                "line": 237,
+                                                "function": "dispatch",
+                                                "class": "Illuminate\\Routing\\CallableDispatcher",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Route.php",
+                                                "line": 208,
+                                                "function": "runCallable",
+                                                "class": "Illuminate\\Routing\\Route",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                                                "line": 798,
+                                                "function": "run",
+                                                "class": "Illuminate\\Routing\\Route",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                                                "line": 141,
+                                                "function": "Illuminate\\Routing\\{closure}",
+                                                "class": "Illuminate\\Routing\\Router",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php",
+                                                "line": 50,
+                                                "function": "Illuminate\\Pipeline\\{closure}",
+                                                "class": "Illuminate\\Pipeline\\Pipeline",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                                                "line": 180,
+                                                "function": "handle",
+                                                "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
+                                                "line": 126,
+                                                "function": "Illuminate\\Pipeline\\{closure}",
+                                                "class": "Illuminate\\Pipeline\\Pipeline",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
+                                                "line": 102,
+                                                "function": "handleRequest",
+                                                "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
+                                                "line": 54,
+                                                "function": "handleRequestUsingNamedLimiter",
+                                                "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                                                "line": 180,
+                                                "function": "handle",
+                                                "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php",
+                                                "line": 33,
+                                                "function": "Illuminate\\Pipeline\\{closure}",
+                                                "class": "Illuminate\\Pipeline\\Pipeline",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                                                "line": 141,
+                                                "function": "Laravel\\Sanctum\\Http\\Middleware\\{closure}",
+                                                "class": "Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                                                "line": 116,
+                                                "function": "Illuminate\\Pipeline\\{closure}",
+                                                "class": "Illuminate\\Pipeline\\Pipeline",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php",
+                                                "line": 34,
+                                                "function": "then",
+                                                "class": "Illuminate\\Pipeline\\Pipeline",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                                                "line": 180,
+                                                "function": "handle",
+                                                "class": "Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                                                "line": 116,
+                                                "function": "Illuminate\\Pipeline\\{closure}",
+                                                "class": "Illuminate\\Pipeline\\Pipeline",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                                                "line": 799,
+                                                "function": "then",
+                                                "class": "Illuminate\\Pipeline\\Pipeline",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                                                "line": 776,
+                                                "function": "runRouteWithinStack",
+                                                "class": "Illuminate\\Routing\\Router",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                                                "line": 740,
+                                                "function": "runRoute",
+                                                "class": "Illuminate\\Routing\\Router",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                                                "line": 729,
+                                                "function": "dispatchToRoute",
+                                                "class": "Illuminate\\Routing\\Router",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+                                                "line": 190,
+                                                "function": "dispatch",
+                                                "class": "Illuminate\\Routing\\Router",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                                                "line": 141,
+                                                "function": "Illuminate\\Foundation\\Http\\{closure}",
+                                                "class": "Illuminate\\Foundation\\Http\\Kernel",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+                                                "line": 21,
+                                                "function": "Illuminate\\Pipeline\\{closure}",
+                                                "class": "Illuminate\\Pipeline\\Pipeline",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php",
+                                                "line": 31,
+                                                "function": "handle",
+                                                "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                                                "line": 180,
+                                                "function": "handle",
+                                                "class": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+                                                "line": 21,
+                                                "function": "Illuminate\\Pipeline\\{closure}",
+                                                "class": "Illuminate\\Pipeline\\Pipeline",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php",
+                                                "line": 40,
+                                                "function": "handle",
+                                                "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                                                "line": 180,
+                                                "function": "handle",
+                                                "class": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php",
+                                                "line": 27,
+                                                "function": "Illuminate\\Pipeline\\{closure}",
+                                                "class": "Illuminate\\Pipeline\\Pipeline",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                                                "line": 180,
+                                                "function": "handle",
+                                                "class": "Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php",
+                                                "line": 86,
+                                                "function": "Illuminate\\Pipeline\\{closure}",
+                                                "class": "Illuminate\\Pipeline\\Pipeline",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                                                "line": 180,
+                                                "function": "handle",
+                                                "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php",
+                                                "line": 62,
+                                                "function": "Illuminate\\Pipeline\\{closure}",
+                                                "class": "Illuminate\\Pipeline\\Pipeline",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                                                "line": 180,
+                                                "function": "handle",
+                                                "class": "Illuminate\\Http\\Middleware\\HandleCors",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php",
+                                                "line": 39,
+                                                "function": "Illuminate\\Pipeline\\{closure}",
+                                                "class": "Illuminate\\Pipeline\\Pipeline",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                                                "line": 180,
+                                                "function": "handle",
+                                                "class": "Illuminate\\Http\\Middleware\\TrustProxies",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                                                "line": 116,
+                                                "function": "Illuminate\\Pipeline\\{closure}",
+                                                "class": "Illuminate\\Pipeline\\Pipeline",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+                                                "line": 165,
+                                                "function": "then",
+                                                "class": "Illuminate\\Pipeline\\Pipeline",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+                                                "line": 134,
+                                                "function": "sendRequestThroughRouter",
+                                                "class": "Illuminate\\Foundation\\Http\\Kernel",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/public/index.php",
+                                                "line": 52,
+                                                "function": "handle",
+                                                "class": "Illuminate\\Foundation\\Http\\Kernel",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php",
+                                                "line": 16,
+                                                "args": [
+                                                    "/var/www/html/public/index.php"
+                                                ],
+                                                "function": "require_once"
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            "properties": {
+                                "status": {
+                                    "type": "string"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "type": "object",
+                                    "nullable": true,
+                                    "properties": {
+                                        "exception": {
+                                            "type": "string"
+                                        },
+                                        "trace": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "file": {
+                                                        "type": "string"
+                                                    },
+                                                    "line": {
+                                                        "type": "integer"
+                                                    },
+                                                    "function": {
+                                                        "type": "string"
+                                                    },
+                                                    "class": {
+                                                        "type": "string"
+                                                    },
+                                                    "type": {
+                                                        "type": "string"
+                                                    },
+                                                    "args": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "string"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "examples": {
+                            "Example when application in production mode": {
+                                "value": {
+                                    "status": "fail",
+                                    "message": "Sorry, something went wrong.",
+                                    "data": null
+                                }
+                            },
+                            "Example whene application in debug mode": {
+                                "value": {
+                                    "status": "fail",
+                                    "message": "Sorry, something went wrong.",
+                                    "data": {
+                                        "exception": "ArgumentCountError",
+                                        "trace": [
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/CallableDispatcher.php",
+                                                "line": 40,
+                                                "function": "{closure}",
+                                                "class": "Illuminate\\Routing\\RouteFileRegistrar",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Route.php",
+                                                "line": 237,
+                                                "function": "dispatch",
+                                                "class": "Illuminate\\Routing\\CallableDispatcher",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Route.php",
+                                                "line": 208,
+                                                "function": "runCallable",
+                                                "class": "Illuminate\\Routing\\Route",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                                                "line": 798,
+                                                "function": "run",
+                                                "class": "Illuminate\\Routing\\Route",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                                                "line": 141,
+                                                "function": "Illuminate\\Routing\\{closure}",
+                                                "class": "Illuminate\\Routing\\Router",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php",
+                                                "line": 50,
+                                                "function": "Illuminate\\Pipeline\\{closure}",
+                                                "class": "Illuminate\\Pipeline\\Pipeline",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                                                "line": 180,
+                                                "function": "handle",
+                                                "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
+                                                "line": 126,
+                                                "function": "Illuminate\\Pipeline\\{closure}",
+                                                "class": "Illuminate\\Pipeline\\Pipeline",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
+                                                "line": 102,
+                                                "function": "handleRequest",
+                                                "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
+                                                "line": 54,
+                                                "function": "handleRequestUsingNamedLimiter",
+                                                "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                                                "line": 180,
+                                                "function": "handle",
+                                                "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php",
+                                                "line": 33,
+                                                "function": "Illuminate\\Pipeline\\{closure}",
+                                                "class": "Illuminate\\Pipeline\\Pipeline",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                                                "line": 141,
+                                                "function": "Laravel\\Sanctum\\Http\\Middleware\\{closure}",
+                                                "class": "Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                                                "line": 116,
+                                                "function": "Illuminate\\Pipeline\\{closure}",
+                                                "class": "Illuminate\\Pipeline\\Pipeline",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php",
+                                                "line": 34,
+                                                "function": "then",
+                                                "class": "Illuminate\\Pipeline\\Pipeline",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                                                "line": 180,
+                                                "function": "handle",
+                                                "class": "Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                                                "line": 116,
+                                                "function": "Illuminate\\Pipeline\\{closure}",
+                                                "class": "Illuminate\\Pipeline\\Pipeline",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                                                "line": 799,
+                                                "function": "then",
+                                                "class": "Illuminate\\Pipeline\\Pipeline",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                                                "line": 776,
+                                                "function": "runRouteWithinStack",
+                                                "class": "Illuminate\\Routing\\Router",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                                                "line": 740,
+                                                "function": "runRoute",
+                                                "class": "Illuminate\\Routing\\Router",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                                                "line": 729,
+                                                "function": "dispatchToRoute",
+                                                "class": "Illuminate\\Routing\\Router",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+                                                "line": 190,
+                                                "function": "dispatch",
+                                                "class": "Illuminate\\Routing\\Router",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                                                "line": 141,
+                                                "function": "Illuminate\\Foundation\\Http\\{closure}",
+                                                "class": "Illuminate\\Foundation\\Http\\Kernel",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+                                                "line": 21,
+                                                "function": "Illuminate\\Pipeline\\{closure}",
+                                                "class": "Illuminate\\Pipeline\\Pipeline",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php",
+                                                "line": 31,
+                                                "function": "handle",
+                                                "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                                                "line": 180,
+                                                "function": "handle",
+                                                "class": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+                                                "line": 21,
+                                                "function": "Illuminate\\Pipeline\\{closure}",
+                                                "class": "Illuminate\\Pipeline\\Pipeline",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php",
+                                                "line": 40,
+                                                "function": "handle",
+                                                "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                                                "line": 180,
+                                                "function": "handle",
+                                                "class": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php",
+                                                "line": 27,
+                                                "function": "Illuminate\\Pipeline\\{closure}",
+                                                "class": "Illuminate\\Pipeline\\Pipeline",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                                                "line": 180,
+                                                "function": "handle",
+                                                "class": "Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php",
+                                                "line": 86,
+                                                "function": "Illuminate\\Pipeline\\{closure}",
+                                                "class": "Illuminate\\Pipeline\\Pipeline",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                                                "line": 180,
+                                                "function": "handle",
+                                                "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php",
+                                                "line": 62,
+                                                "function": "Illuminate\\Pipeline\\{closure}",
+                                                "class": "Illuminate\\Pipeline\\Pipeline",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                                                "line": 180,
+                                                "function": "handle",
+                                                "class": "Illuminate\\Http\\Middleware\\HandleCors",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php",
+                                                "line": 39,
+                                                "function": "Illuminate\\Pipeline\\{closure}",
+                                                "class": "Illuminate\\Pipeline\\Pipeline",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                                                "line": 180,
+                                                "function": "handle",
+                                                "class": "Illuminate\\Http\\Middleware\\TrustProxies",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                                                "line": 116,
+                                                "function": "Illuminate\\Pipeline\\{closure}",
+                                                "class": "Illuminate\\Pipeline\\Pipeline",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+                                                "line": 165,
+                                                "function": "then",
+                                                "class": "Illuminate\\Pipeline\\Pipeline",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+                                                "line": 134,
+                                                "function": "sendRequestThroughRouter",
+                                                "class": "Illuminate\\Foundation\\Http\\Kernel",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/public/index.php",
+                                                "line": 52,
+                                                "function": "handle",
+                                                "class": "Illuminate\\Foundation\\Http\\Kernel",
+                                                "type": "->"
+                                            },
+                                            {
+                                                "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php",
+                                                "line": 16,
+                                                "args": [
+                                                    "/var/www/html/public/index.php"
+                                                ],
+                                                "function": "require_once"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "unauthenticated-401": {
+                "description": "Example response",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "type": "object",
+                                    "nullable": true
+                                }
+                            },
+                            "x-examples": {
+                                "Example 1": {
+                                    "status": "fail",
+                                    "message": "Unauthenticated",
+                                    "data": null
+                                }
+                            }
+                        },
+                        "examples": {
+                            "Example 1": {
+                                "value": {
+                                    "status": "fail",
+                                    "message": "Unauthenticated",
+                                    "data": null
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "unautorized-403": {
+                "description": "Example response",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "type": "object",
+                                    "nullable": true
+                                }
+                            },
+                            "x-examples": {
+                                "Example 1": {
+                                    "status": "fail",
+                                    "message": "This action is unauthorized.",
+                                    "data": null
+                                }
+                            }
+                        },
+                        "examples": {
+                            "Example 1": {
+                                "value": {
+                                    "status": "fail",
+                                    "message": "This action is unauthorized.",
+                                    "data": null
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "validation-error": {
+                "description": "Example response",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "x-examples": {
+                                "Example 1": {
+                                    "status": "fail",
+                                    "message": "username field is required",
+                                    "data": {
+                                        "username": [
+                                            "username field is required"
+                                        ]
+                                    }
+                                }
+                            },
+                            "properties": {
+                                "status": {
+                                    "type": "string"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "type": "object",
+                                    "properties": {
+                                        "fieldName": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "examples": {
+                            "Example 1": {
+                                "value": {
+                                    "status": "fail",
+                                    "message": "fieldName field is required",
+                                    "data": {
+                                        "fieldName": [
+                                            "fieldNamefield is required"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "parameters": {
+            "page": {
+                "name": "page",
+                "in": "query",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                },
+                "description": "select a page"
+            },
+            "itemID": {
+                "name": "itemID",
+                "in": "path",
+                "required": true,
+                "description": "the selected item id",
+                "schema": {
+                    "type": "integer"
+                }
+            }
+        }
+    },
+    "security": [
+        {
+            "token": []
+        }
+    ],
+    "tags": [
+        {
+            "name": "bids",
+            "description": "all bids related endpoints"
+        },
+        {
+            "name": "items",
+            "description": "all items related endpoints"
+        },
+        {
+            "name": "users",
+            "description": "all users related endpoints"
+        }
+    ]
+}
